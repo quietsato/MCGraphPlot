@@ -2,3 +2,13 @@ name: MCGraphPlot
 version: '${project.version}'
 main: io.github.quietsato.mcgraphplot.MCGraphPlot
 api-version: 1.18
+
+commands:
+  glaphplot:
+    usage:
+      /glaphplot plot [equation]
+      /glaphplot config list
+      /glaphplot config get [config]
+      /glaphplot config set [config] [value...]
+    aliases:
+      - gp
