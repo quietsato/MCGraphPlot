@@ -1,4 +1,4 @@
 name: MCGraphPlot
 version: '${project.version}'
 main: io.github.quietsato.mcgraphplot.MCGraphPlot
-api-version: 1.15
+api-version: 1.18
