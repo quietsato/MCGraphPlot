@@ -8,7 +8,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
-public class PythonClient extends Loggable implements EquationSolverClient {
+public class PythonEquationSolver extends Loggable implements EquationSolver {
     @Override
     public List<Coordinate> solve(
             double xmin,

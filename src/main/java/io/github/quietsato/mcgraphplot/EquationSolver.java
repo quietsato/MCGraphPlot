@@ -2,14 +2,8 @@ package io.github.quietsato.mcgraphplot;
 
 import java.util.List;
 
-public class EquationSolver extends Loggable {
-    EquationSolverClient solverClient;
-
-    public EquationSolver(EquationSolverClient solverClient) {
-        this.solverClient = solverClient;
-    }
-
-    public List<Coordinate> solve(
+public interface EquationSolver {
+    List<Coordinate> solve(
             double xmin,
             double xmax,
             double ymin,
@@ -18,16 +12,5 @@ public class EquationSolver extends Loggable {
             double zmax,
             double step,
             String equation
-    ) {
-        return this.solverClient.solve(
-                xmin,
-                xmax,
-                ymin,
-                ymax,
-                zmin,
-                zmax,
-                step,
-                equation
-        );
-    }
+    );
 }
