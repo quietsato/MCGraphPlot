@@ -13,7 +13,7 @@ import java.util.stream.Collectors;
 public final class MCGraphPlot extends JavaPlugin {
     private World world;
 
-    private EquationSolver equationSolver;
+    private EquationSolverClient solverClient;
     private GraphPlotter graphPlotter;
 
     @Override
@@ -21,9 +21,9 @@ public final class MCGraphPlot extends JavaPlugin {
         // Plugin startup logic
         this.world = getServer().getWorlds().get(0);
 
-        PythonClient pythonClient = new PythonClient();
-        pythonClient.setLogger(getLogger());
-        this.equationSolver = new EquationSolver(pythonClient);
+        PythonEquationSolver solver = new PythonEquationSolver();
+        solver.setLogger(getLogger());
+        this.solverClient = new EquationSolverClient(solver);
 
         this.graphPlotter = new GraphPlotter(this.world);
         this.graphPlotter.setLogger(getLogger());
@@ -46,7 +46,7 @@ public final class MCGraphPlot extends JavaPlugin {
             String equation = Arrays.stream(args).skip(1).collect(Collectors.joining());
 
 
-            List<Coordinate> coordinateList = this.equationSolver.solve(
+            List<Coordinate> coordinateList = this.solverClient.solve(
                     -10.0, 10.0,
                     -10.0, 10.0,
                     -10.0, 10.0,
