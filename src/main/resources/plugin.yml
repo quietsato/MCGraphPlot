@@ -4,8 +4,8 @@ main: io.github.quietsato.mcgraphplot.MCGraphPlot
 api-version: 1.18
 
 commands:
-  glaphplot:
+  graphplot:
     usage:
-      /glaphplot [equation]
+      /graphplot [equation]
     aliases:
       - gp

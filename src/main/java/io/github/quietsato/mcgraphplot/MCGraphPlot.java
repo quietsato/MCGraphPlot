@@ -30,7 +30,7 @@ public final class MCGraphPlot extends JavaPlugin {
 
     @Override
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
-        if (!label.equalsIgnoreCase("gp") && !label.equalsIgnoreCase("glaphplot")) {
+        if (!label.equalsIgnoreCase("gp") && !label.equalsIgnoreCase("graphplot")) {
             return false;
         }
         if (args.length < 1) {
