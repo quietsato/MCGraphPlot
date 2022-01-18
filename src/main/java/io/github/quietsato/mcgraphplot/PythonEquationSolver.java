@@ -9,6 +9,12 @@ import java.util.List;
 import java.util.Scanner;
 
 public class PythonEquationSolver extends Loggable implements EquationSolver {
+    private String pythonExecCommand;
+
+    public PythonEquationSolver(String pythonExecCommand) {
+        this.pythonExecCommand =  pythonExecCommand;
+    }
+
     @Override
     public List<Coordinate> solve(
             double xmin,
@@ -70,7 +76,7 @@ public class PythonEquationSolver extends Loggable implements EquationSolver {
         }
 
         try {
-            ProcessBuilder processBuilder = new ProcessBuilder("python3", "-c", pythonScript);
+            ProcessBuilder processBuilder = new ProcessBuilder(this.pythonExecCommand, "-c", pythonScript);
             return processBuilder.start();
         } catch (IOException e) {
             e.printStackTrace();
