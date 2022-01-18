@@ -20,8 +20,9 @@ public final class MCGraphPlot extends JavaPlugin {
     public void onEnable() {
         // Plugin startup logic
         this.world = getServer().getWorlds().get(0);
+        String pythonExecCommand = "python3";
 
-        PythonEquationSolver solver = new PythonEquationSolver();
+        PythonEquationSolver solver = new PythonEquationSolver(pythonExecCommand);
         solver.setLogger(getLogger());
         this.solverClient = new EquationSolverClient(solver);
 
